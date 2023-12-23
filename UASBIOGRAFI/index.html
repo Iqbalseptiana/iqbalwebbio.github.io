@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Saya</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Biografi Saya</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#foto">Foto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skill">Skill</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pendidikan">Pendidikan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pencapaian">Pencapaian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#materi">Materi</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="container">
+            <header class="text-center my-5">
+                <h1>IQBAL SEPTIANA</h1>
+            </header>
+
+            <section id="foto" class="text-center mb-5">
+                <img src="https://media.licdn.com/dms/image/D5603AQE-st0hWvANEg/profile-displayphoto-shrink_400_400/0/1664522717225?e=1708560000&v=beta&t=Bwkgqr0V34MMCirOlGbVWWMK5h0PmYXumdazYtAJGCU" alt="Foto Saya" class="img-fluid rounded-circle" style="max-width: 200px;"><BR><BR>
+                <P>Hi I'm Iqbal , Android Engineer, specially Kotlin and a bit about Java. Using Android Studio as its software. I also know a little about Web Programming and mySQL Database.</P>
+            </section>
+
+            <section id="skill" class="mb-5">
+                <h2>Skill</h2>
+                <canvas id="skillChart" width="400" height="200"></canvas>
+            </section>
+
+            <section id="pendidikan" class="mb-5">
+                <h2>Pendidikan</h2>
+                <div class="education-section">
+                    <div class="education-item">
+                        <img src="https://e-learning.unpam.ac.id/pluginfile.php?file=%2F1%2Ftheme_edumy%2Fheaderlogo1%2F1700478856%2Fcropped-logo-unpam.png"
+                            alt="Universitas Pamulang Logo">
+                        <h2>Universitas Pamulang</h2>
+                        <p>Sarjana, Teknik Informatika</p>
+                        <p>Sep 2021</p>
+                        <p>Grade: 3.79</p>
+                    </div>
+                    <div class="education-item">
+                        <img src="https://smkn1wadaslintang.sch.id/wp-content/uploads/2022/10/WhatsApp-Image-2022-08-23-at-9.29.27-AM-768x774.jpeg  "
+                            alt="Logo">
+                        <h2>SMK Negeri 1 Wadaslintang</h2>
+                        <p>Software Engineer</p>
+                        <p>Jul 2018 - Jun 2021</p>
+                        <p>Grade: 86.86</p>
+                        <!-- <p>Activities and societies: Dewan Ambalan dan Music band</p> -->
+                    </div>
+                    <div class="education-item">
+                        <img src="data:image/png;base64,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"
+                            alt="Logo">
+                        <h2>SMP Negeri 3 Wadaslintang</h2>
+                        <p>Jul 2015 - May 2018</p>
+                        <p>Grade: 87.45</p>
+                        <!-- <p>Activities and societies: OSIS, Dewan Penggalang, Drum Band, Music Band, Lukis dan Volly Ball.</p>
+                        <p>Lomba Gambar Keagamaan</p>
+                        <p>Piagam Penghargaan Lukis Tingkat Kecamatan</p> -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="pencapaian" class="mb-5">
+                <h2>Pencapaian</h2>
+                <div class="achievement-list">
+                    <div class="achievement-item">
+                        <img src="https://media.licdn.com/dms/image/C562DAQFG4eKa-0jneQ/profile-treasury-image-shrink_800_800/0/1662278674580?e=1703908800&v=beta&t=oZ9V0vvTXCLr5ve0ezmYBHk1ogej4_J8l9jrszaXW0s"
+                            alt="Foto 1">
+                        <p>Activities and societies: Dewan Ambalan</p>
+                    </div>
+                    <div class="achievement-item">
+                        <img src="https://media.licdn.com/dms/image/C562DAQG9CW-BUsJVAw/profile-treasury-image-shrink_800_800/0/1662278592934?e=1703908800&v=beta&t=QcqyyNPhbBrdvwFHGPu8fSQ4d728F358JO9nC-XP76Y"
+                            alt="Foto 2">
+                        <p>Activities and societies: Music Band</p>
+                    </div>
+                    <div class="achievement-item">
+                        <img src="https://media.licdn.com/dms/image/C562DAQFlEnudmmojUw/profile-treasury-image-shrink_800_800/0/1662278585254?e=1703908800&v=beta&t=uyBBlUJLp6H6R_SzyBrHzHxmci3jAXeNjwtWQxpfD_A"
+                            alt="Foto 3">
+                        <p>Activities and societies: Lukis</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="materi" class="mb-5">
+                <h2>Materi</h2>
+                <h5>Cara Kerja Website:</h5>
+
+                <p>Website adalah kumpulan halaman web yang saling terkait dan dapat diakses melalui internet. Cara
+                    kerja sebuah website melibatkan beberapa langkah:</p>
+
+                <ol>
+                    <li>
+                        <strong>Pemilihan Nama Domain:</strong> Pertama, pemilik website harus memilih dan mendaftarkan
+                        nama domain unik yang akan menjadi alamat website (contoh: www.namadomain.com).
+                    </li>
+                    <li>
+                        <strong>Pemilihan Hosting:</strong> Website perlu di-host di server untuk dapat diakses secara
+                        online. Pemilik website dapat menggunakan penyedia layanan hosting untuk menyimpan data dan file
+                        website di server.
+                    </li>
+                    <li>
+                        <strong>Pembuatan Konten:</strong> Konten seperti teks, gambar, video, dan elemen-elemen lainnya
+                        dibuat dan disusun dalam halaman-halaman web. Ini dapat melibatkan penggunaan HTML, CSS, dan
+                        bahasa pemrograman lainnya.
+                    </li>
+                    <li>
+                        <strong>Pengembangan Website:</strong> Proses pengembangan website melibatkan desain tampilan,
+                        fungsionalitas, dan interaktivitasnya. Ini mungkin melibatkan pengembang web menggunakan
+                        berbagai bahasa pemrograman seperti JavaScript, PHP, atau Python.
+                    </li>
+                    <li>
+                        <strong>Pengelolaan Database:</strong> Jika website melibatkan penyimpanan data, seringkali ada
+                        penggunaan database untuk menyimpan dan mengelola informasi, seperti data pengguna atau konten
+                        dinamis.
+                    </li>
+                    <li>
+                        <strong>Testing:</strong> Sebelum diluncurkan, website harus diuji untuk memastikan bahwa semua
+                        elemen berfungsi dengan baik di berbagai perangkat dan browser.
+                    </li>
+                    <li>
+                        <strong>Peluncuran:</strong> Setelah semua persiapan selesai, website dapat diluncurkan dan
+                        diakses oleh pengguna melalui browser web.
+                    </li>
+                </ol>
+
+                <h5>Hubungan antara Web Server, Domain, dan Hosting:</h5>
+
+                <ol>
+                    <li>
+                        <strong>Domain:</strong> Nama domain adalah alamat unik yang digunakan untuk mengidentifikasi
+                        suatu website di internet. Contoh: www.namadomain.com. Domain ini harus didaftarkan melalui
+                        registrar domain dan diperbarui secara berkala.
+                    </li>
+                    <li>
+                        <strong>Hosting:</strong> Hosting adalah layanan penyimpanan dan pemeliharaan file-file website
+                        di server. Penyedia hosting menyediakan ruang server tempat website disimpan. Pemilik website
+                        membayar biaya hosting kepada penyedia hosting untuk menyimpan dan mengelola file-file tersebut.
+                    </li>
+                    <li>
+                        <strong>Web Server:</strong> Web server adalah perangkat keras atau perangkat lunak yang
+                        menyimpan dan menyajikan konten website kepada pengguna. Saat seseorang mengakses suatu website,
+                        permintaan dikirimkan ke server web, yang kemudian mengirimkan kembali data ke browser pengguna
+                        untuk ditampilkan.
+                    </li>
+                </ol>
+            </section>
+        </div>
+
+    </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2023 Biografi Saya. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var ctx = document.getElementById('skillChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['HTML', 'CSS', 'Java', 'Kotlin', 'MySQL'],
+                    datasets: [{
+                        label: 'Skill Level',
+                        data: [90, 60, 50, 70, 80],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
